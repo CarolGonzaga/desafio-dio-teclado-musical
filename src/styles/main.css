@@ -25,7 +25,11 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: var(--cor-background);
+  
+  background-image: url("../images/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   color: var(--cor-branco);
 }
 
