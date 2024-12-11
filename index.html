@@ -4,50 +4,145 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Piano Simulator</title>
+  
+  <title>Controladora MIDI</title>
 
-  <!-- styles -->
+  <!-- CSS -->
   <link rel="stylesheet" href="./src/styles/reset.css">
   <link rel="stylesheet" href="./src/styles/main.css">
 
-  <!-- fonts -->
+  <!-- Fonte -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,700;1,100;1,200;1,300;1,400&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,700;1,100;1,200;1,300;1,400&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Gothic&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <div class="container">
+    
     <header>
-      <h2>Virtual Piano</h2>
+      <h2 class="gradient">Midi Box</h2>
       <div class="column volume-slider">
-        <span>Volume</span> <input type="range" min="0" max="1" value="0.5" step="any">
+        <span>Volume</span> 
+        <input type="range" min="0" max="1" value="0.5" step="any">
       </div>
       <div class="column keys-check">
-        <span>Teclas</span> <input type="checkbox" checked>
+        <span>Teclas</span> 
+        <input type="checkbox" checked>
       </div>
     </header>
-    <ul class="piano-keys">
-      <li class="key white" data-key="a"><span>a</span></li>
-      <li class="key black" data-key="w"><span>w</span></li>
-      <li class="key white" data-key="s"><span>s</span></li>
-      <li class="key black" data-key="e"><span>e</span></li>
-      <li class="key white" data-key="d"><span>d</span></li>
-      <li class="key black" data-key="f"><span>f</span></li>
-      <li class="key white" data-key="t"><span>t</span></li>
-      <li class="key black" data-key="g"><span>g</span></li>
-      <li class="key white" data-key="y"><span>y</span></li>
-      <li class="key black" data-key="h"><span>h</span></li>
-      <li class="key white" data-key="u"><span>u</span></li>
-      <li class="key black" data-key="j"><span>j</span></li>
-      <li class="key white" data-key="k"><span>k</span></li>
-      <li class="key black" data-key="o"><span>o</span></li>
-      <li class="key white" data-key="l"><span>l</span></li>
-      <li class="key black" data-key="p"><span>p</span></li>
-      <li class="key white" data-key=";"><span>;</span></li>
-    </ul>
+
+    <section>
+      <!-- Teclas MIDI -->
+      <div class="section-left">
+        <ul class="midi-keys">
+          <li class="square-key" data-key="1">
+            <span>1</span>
+          </li>
+          <li class="square-key" data-key="2">
+            <span>2</span>
+          </li>
+          <li class="square-key" data-key="3">
+            <span>3</span>
+          </li>
+          <li class="square-key" data-key="4">
+            <span>4</span>
+          </li>
+          <li class="square-key" data-key="5">
+            <span>5</span>
+          </li>
+          <li class="square-key" data-key="6">
+            <span>6</span>
+          </li>
+          <li class="square-key" data-key="7">
+            <span>7</span>
+          </li>
+          <li class="square-key" data-key="8">
+            <span>8</span>
+          </li>
+          <li class="square-key" data-key="9">
+            <span>9</span>
+          </li>
+        </ul>
+      </div>
+      <!-- Teclas do piano -->
+      <div class="section-right">
+        <ul class="piano-keys">
+          <li class="key white" data-key="a">
+            <div class="text-key">
+              <span class="note">Do</span>
+              <span class="keybord-key-white">a</span>
+            </div>
+          </li>
+          <li class="key black" data-key="w">
+            <div class="text-key">
+              <span class="keybord-key-black">w</span>
+            </div>
+          </li>
+          <li class="key white" data-key="s">
+            <div class="text-key">
+              <span class="note">Re</span>
+              <span class="keybord-key-white">s</span>
+            </div>
+          </li>
+          <li class="key black" data-key="e">
+            <div class="text-key">
+              <span class="keybord-key-black">e</span>
+            </div>
+          </li>
+          <li class="key white" data-key="d">
+            <div class="text-key">
+              <span class="note">Mi</span>
+              <span class="keybord-key-white">d</span>
+            </div>
+          </li>
+          <li class="key white" data-key="f">
+            <div class="text-key">
+              <span class="note">Fa</span>
+              <span class="keybord-key-white">f</span>
+            </div>
+          </li>
+          <li class="key black" data-key="t">
+            <div class="text-key">
+              <span class="keybord-key-black">t</span>
+            </div>
+          </li>
+          <li class="key white" data-key="g">
+            <div class="text-key">
+              <span class="note">Sol</span>
+              <span class="keybord-key-white">g</span>
+            </div>
+          </li>
+          <li class="key black" data-key="y">
+            <div class="text-key">
+              <span class="keybord-key-black">y</span>
+            </div>
+          </li>
+          <li class="key white" data-key="h">
+            <div class="text-key">
+              <span class="note">La</span>
+              <span class="keybord-key-white">h</span>
+            </div>
+          </li>
+          <li class="key black" data-key="u">
+            <div class="text-key">
+              <span class="keybord-key-black">u</span>
+            </div>
+          </li>
+          <li class="key white" data-key="j">
+            <div class="text-key">
+              <span class="note">Si</span>
+              <span class="keybord-key-white">j</span>
+            </div>
+          </li>
+        </ul>
+      </div>  
+    </section>
+
   </div>
 
   <script src="./src/scripts/engine.js" defer></script>
